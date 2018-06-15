@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f7d2fa38019f4530a8dfad0feb6ac556" Name="Diagram1" >
+        <EntityTypeShape EntityType="QuanLyNhaTro.ChiTietDichVu" Width="1.5" PointX="7.375" PointY="3.625" />
+        <EntityTypeShape EntityType="QuanLyNhaTro.ChiTietHopDong" Width="1.5" PointX="5.25" PointY="3.625" />
+        <EntityTypeShape EntityType="QuanLyNhaTro.DichVu" Width="1.5" PointX="7.375" PointY="6.625" />
+        <EntityTypeShape EntityType="QuanLyNhaTro.HopDongThue" Width="1.5" PointX="5.25" PointY="8.125" />
+        <EntityTypeShape EntityType="QuanLyNhaTro.KhachHang" Width="1.5" PointX="2.5" PointY="8.125" />
+        <EntityTypeShape EntityType="QuanLyNhaTro.LoaiPhong" Width="1.5" PointX="0.5" PointY="2.875" />
+        <EntityTypeShape EntityType="QuanLyNhaTro.NhaTro" Width="1.5" PointX="0.5" PointY="5.375" />
+        <EntityTypeShape EntityType="QuanLyNhaTro.PhieuThanhToan" Width="1.5" PointX="5.25" PointY="11.125" />
+        <EntityTypeShape EntityType="QuanLyNhaTro.PhongTro" Width="1.5" PointX="2.75" PointY="3.5" />
+        <EntityTypeShape EntityType="QuanLyNhaTro.TaiKhoan" Width="1.5" PointX="0.5" PointY="0.875" />
+        <EntityTypeShape EntityType="QuanLyNhaTro.ThietBi" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QuanLyNhaTro.TrangBi" Width="1.5" PointX="2.875" PointY="0.625" />
+        <AssociationConnector Association="QuanLyNhaTro.FK__ChiTietDi__MaChi__2A4B4B5E" />
+        <AssociationConnector Association="QuanLyNhaTro.FK__ChiTietDic__MaDV__2B3F6F97" />
+        <AssociationConnector Association="QuanLyNhaTro.FK__ChiTietHo__MaPho__2C3393D0" />
+        <AssociationConnector Association="QuanLyNhaTro.FK__ChiTietHop__MaHD__2D27B809" />
+        <AssociationConnector Association="QuanLyNhaTro.FK__HopDongThu__MaKH__2E1BDC42" />
+        <AssociationConnector Association="QuanLyNhaTro.FK__PhieuThanh__MaHD__2F10007B" />
+        <AssociationConnector Association="QuanLyNhaTro.FK__PhongTro__MaLoai__300424B4" />
+        <AssociationConnector Association="QuanLyNhaTro.FK__PhongTro__MaNhaT__30F848ED" />
+        <AssociationConnector Association="QuanLyNhaTro.FK__TrangBi__MaPhong__31EC6D26" />
+        <AssociationConnector Association="QuanLyNhaTro.FK__TrangBi__MaThiet__32E0915F" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

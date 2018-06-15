@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyNhaTro.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="QuanLyNhaTroStoreContainer">
+    <EntitySet Name="ChiTietDichVus" EntityType="QuanLyNhaTro.Store.ChiTietDichVus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChiTietHopDongs" EntityType="QuanLyNhaTro.Store.ChiTietHopDongs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DichVus" EntityType="QuanLyNhaTro.Store.DichVus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HopDongThues" EntityType="QuanLyNhaTro.Store.HopDongThues" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KhachHangs" EntityType="QuanLyNhaTro.Store.KhachHangs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoaiPhongs" EntityType="QuanLyNhaTro.Store.LoaiPhongs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NhaTroes" EntityType="QuanLyNhaTro.Store.NhaTroes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhieuThanhToans" EntityType="QuanLyNhaTro.Store.PhieuThanhToans" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhongTroes" EntityType="QuanLyNhaTro.Store.PhongTroes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TaiKhoans" EntityType="QuanLyNhaTro.Store.TaiKhoans" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ThietBis" EntityType="QuanLyNhaTro.Store.ThietBis" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TrangBis" EntityType="QuanLyNhaTro.Store.TrangBis" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__ChiTietDi__MaChi__2A4B4B5E" Association="QuanLyNhaTro.Store.FK__ChiTietDi__MaChi__2A4B4B5E">
+      <End Role="ChiTietHopDong" EntitySet="ChiTietHopDongs" />
+      <End Role="ChiTietDichVu" EntitySet="ChiTietDichVus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChiTietDic__MaDV__2B3F6F97" Association="QuanLyNhaTro.Store.FK__ChiTietDic__MaDV__2B3F6F97">
+      <End Role="DichVu" EntitySet="DichVus" />
+      <End Role="ChiTietDichVu" EntitySet="ChiTietDichVus" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChiTietHo__MaPho__2C3393D0" Association="QuanLyNhaTro.Store.FK__ChiTietHo__MaPho__2C3393D0">
+      <End Role="PhongTro" EntitySet="PhongTroes" />
+      <End Role="ChiTietHopDong" EntitySet="ChiTietHopDongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChiTietHop__MaHD__2D27B809" Association="QuanLyNhaTro.Store.FK__ChiTietHop__MaHD__2D27B809">
+      <End Role="HopDongThue" EntitySet="HopDongThues" />
+      <End Role="ChiTietHopDong" EntitySet="ChiTietHopDongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HopDongThu__MaKH__2E1BDC42" Association="QuanLyNhaTro.Store.FK__HopDongThu__MaKH__2E1BDC42">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="HopDongThue" EntitySet="HopDongThues" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuThanh__MaHD__2F10007B" Association="QuanLyNhaTro.Store.FK__PhieuThanh__MaHD__2F10007B">
+      <End Role="HopDongThue" EntitySet="HopDongThues" />
+      <End Role="PhieuThanhToan" EntitySet="PhieuThanhToans" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhongTro__MaLoai__300424B4" Association="QuanLyNhaTro.Store.FK__PhongTro__MaLoai__300424B4">
+      <End Role="LoaiPhong" EntitySet="LoaiPhongs" />
+      <End Role="PhongTro" EntitySet="PhongTroes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhongTro__MaNhaT__30F848ED" Association="QuanLyNhaTro.Store.FK__PhongTro__MaNhaT__30F848ED">
+      <End Role="NhaTro" EntitySet="NhaTroes" />
+      <End Role="PhongTro" EntitySet="PhongTroes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TrangBi__MaPhong__31EC6D26" Association="QuanLyNhaTro.Store.FK__TrangBi__MaPhong__31EC6D26">
+      <End Role="PhongTro" EntitySet="PhongTroes" />
+      <End Role="TrangBi" EntitySet="TrangBis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TrangBi__MaThiet__32E0915F" Association="QuanLyNhaTro.Store.FK__TrangBi__MaThiet__32E0915F">
+      <End Role="ThietBi" EntitySet="ThietBis" />
+      <End Role="TrangBi" EntitySet="TrangBis" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ChiTietDichVus">
+    <Key>
+      <PropertyRef Name="MaChiTietDV" />
+    </Key>
+    <Property Name="MaChiTietDV" Type="int" Nullable="false" />
+    <Property Name="NgaySuDung" Type="datetime" Nullable="true" />
+    <Property Name="MaDV" Type="int" Nullable="false" />
+    <Property Name="MaChiTietHD" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChiTietHopDongs">
+    <Key>
+      <PropertyRef Name="MaChiTietHD" />
+    </Key>
+    <Property Name="MaChiTietHD" Type="int" Nullable="false" />
+    <Property Name="MaHD" Type="int" Nullable="false" />
+    <Property Name="MaPhong" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DichVus">
+    <Key>
+      <PropertyRef Name="MaDV" />
+    </Key>
+    <Property Name="MaDV" Type="int" Nullable="false" />
+    <Property Name="TenDV" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="GiaDV" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="HopDongThues">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="int" Nullable="false" />
+    <Property Name="MaKH" Type="int" Nullable="false" />
+    <Property Name="NgayBatDauHD" Type="datetime" Nullable="false" />
+    <Property Name="ThoiHanHD" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="KhachHangs">
+    <Key>
+      <PropertyRef Name="MaKhach" />
+    </Key>
+    <Property Name="MaKhach" Type="int" Nullable="false" />
+    <Property Name="TenKhach" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="CMND" Type="int" Nullable="true" />
+    <Property Name="GioiTinh" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DiaChiKhach" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="NgheNghiep" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="SdtKhach" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="HinhAnhKH" Type="varbinary(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="LoaiPhongs">
+    <Key>
+      <PropertyRef Name="MaLoaiPhong" />
+    </Key>
+    <Property Name="MaLoaiPhong" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DienTich" Type="float" Nullable="true" />
+    <Property Name="TenLoaiPhong" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="GiaPhong" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="NhaTroes">
+    <Key>
+      <PropertyRef Name="MaNhaTro" />
+    </Key>
+    <Property Name="MaNhaTro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="DoanhThu" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="PhieuThanhToans">
+    <Key>
+      <PropertyRef Name="MaPhieu" />
+    </Key>
+    <Property Name="MaPhieu" Type="int" Nullable="false" />
+    <Property Name="ThangSuDung" Type="int" Nullable="false" />
+    <Property Name="ThanhTien" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="NgayThanhToan" Type="datetime" Nullable="true" />
+    <Property Name="MaHD" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhongTroes">
+    <Key>
+      <PropertyRef Name="MaPhong" />
+    </Key>
+    <Property Name="MaPhong" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenPhong" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="SoLuongNguoi" Type="int" Nullable="true" />
+    <Property Name="MaLoaiPhong" Type="int" Nullable="false" />
+    <Property Name="MaNhaTro" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaiKhoans">
+    <Key>
+      <PropertyRef Name="TenTK" />
+    </Key>
+    <Property Name="TenTK" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="MatKhau" Type="nchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ThietBis">
+    <Key>
+      <PropertyRef Name="MaThietBi" />
+    </Key>
+    <Property Name="MaThietBi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenThietBi" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TrangBis">
+    <Key>
+      <PropertyRef Name="MaPhong" />
+      <PropertyRef Name="MaThietBi" />
+    </Key>
+    <Property Name="MaPhong" Type="int" Nullable="false" />
+    <Property Name="MaThietBi" Type="int" Nullable="false" />
+    <Property Name="ThoiDiem" Type="datetime" Nullable="true" />
+  </EntityType>
+  <Association Name="FK__ChiTietDi__MaChi__2A4B4B5E">
+    <End Role="ChiTietHopDong" Type="QuanLyNhaTro.Store.ChiTietHopDongs" Multiplicity="1" />
+    <End Role="ChiTietDichVu" Type="QuanLyNhaTro.Store.ChiTietDichVus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChiTietHopDong">
+        <PropertyRef Name="MaChiTietHD" />
+      </Principal>
+      <Dependent Role="ChiTietDichVu">
+        <PropertyRef Name="MaChiTietHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChiTietDic__MaDV__2B3F6F97">
+    <End Role="DichVu" Type="QuanLyNhaTro.Store.DichVus" Multiplicity="1" />
+    <End Role="ChiTietDichVu" Type="QuanLyNhaTro.Store.ChiTietDichVus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DichVu">
+        <PropertyRef Name="MaDV" />
+      </Principal>
+      <Dependent Role="ChiTietDichVu">
+        <PropertyRef Name="MaDV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChiTietHo__MaPho__2C3393D0">
+    <End Role="PhongTro" Type="QuanLyNhaTro.Store.PhongTroes" Multiplicity="1" />
+    <End Role="ChiTietHopDong" Type="QuanLyNhaTro.Store.ChiTietHopDongs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhongTro">
+        <PropertyRef Name="MaPhong" />
+      </Principal>
+      <Dependent Role="ChiTietHopDong">
+        <PropertyRef Name="MaPhong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChiTietHop__MaHD__2D27B809">
+    <End Role="HopDongThue" Type="QuanLyNhaTro.Store.HopDongThues" Multiplicity="1" />
+    <End Role="ChiTietHopDong" Type="QuanLyNhaTro.Store.ChiTietHopDongs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HopDongThue">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="ChiTietHopDong">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HopDongThu__MaKH__2E1BDC42">
+    <End Role="KhachHang" Type="QuanLyNhaTro.Store.KhachHangs" Multiplicity="1" />
+    <End Role="HopDongThue" Type="QuanLyNhaTro.Store.HopDongThues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKhach" />
+      </Principal>
+      <Dependent Role="HopDongThue">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuThanh__MaHD__2F10007B">
+    <End Role="HopDongThue" Type="QuanLyNhaTro.Store.HopDongThues" Multiplicity="1" />
+    <End Role="PhieuThanhToan" Type="QuanLyNhaTro.Store.PhieuThanhToans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HopDongThue">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="PhieuThanhToan">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhongTro__MaLoai__300424B4">
+    <End Role="LoaiPhong" Type="QuanLyNhaTro.Store.LoaiPhongs" Multiplicity="1" />
+    <End Role="PhongTro" Type="QuanLyNhaTro.Store.PhongTroes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiPhong">
+        <PropertyRef Name="MaLoaiPhong" />
+      </Principal>
+      <Dependent Role="PhongTro">
+        <PropertyRef Name="MaLoaiPhong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhongTro__MaNhaT__30F848ED">
+    <End Role="NhaTro" Type="QuanLyNhaTro.Store.NhaTroes" Multiplicity="1" />
+    <End Role="PhongTro" Type="QuanLyNhaTro.Store.PhongTroes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaTro">
+        <PropertyRef Name="MaNhaTro" />
+      </Principal>
+      <Dependent Role="PhongTro">
+        <PropertyRef Name="MaNhaTro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TrangBi__MaPhong__31EC6D26">
+    <End Role="PhongTro" Type="QuanLyNhaTro.Store.PhongTroes" Multiplicity="1" />
+    <End Role="TrangBi" Type="QuanLyNhaTro.Store.TrangBis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhongTro">
+        <PropertyRef Name="MaPhong" />
+      </Principal>
+      <Dependent Role="TrangBi">
+        <PropertyRef Name="MaPhong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TrangBi__MaThiet__32E0915F">
+    <End Role="ThietBi" Type="QuanLyNhaTro.Store.ThietBis" Multiplicity="1" />
+    <End Role="TrangBi" Type="QuanLyNhaTro.Store.TrangBis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ThietBi">
+        <PropertyRef Name="MaThietBi" />
+      </Principal>
+      <Dependent Role="TrangBi">
+        <PropertyRef Name="MaThietBi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
